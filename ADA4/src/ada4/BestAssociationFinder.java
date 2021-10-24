@@ -68,23 +68,39 @@ public class BestAssociationFinder {
         input.close();
 
         double socialWeight = 0;
+        ArrayList connectionList = new ArrayList();
+        double strongestConnection = 0;
 
         if (("Anne".equals(nameOne) && "Carl".equals(nameTwo)) || ("Anne".equals(nameTwo) && "Carl".equals(nameOne))) {
             socialWeight = 0.4;
+            connectionList.add("AnneToCarl");
         } else if (("Anne".equals(nameOne) && "Bill".equals(nameTwo)) || ("Anne".equals(nameTwo) && "Bill".equals(nameOne))) {
             socialWeight = 0.5;
+            connectionList.add("AnneToBill");
         } else if (("Carl".equals(nameOne) && "Emma".equals(nameTwo)) || ("Carl".equals(nameTwo) && "Emma".equals(nameOne))) {
             socialWeight = 0.5;
+            connectionList.add("CarlToEmma");
         } else if (("Carl".equals(nameOne) && "Dave".equals(nameTwo)) || ("Carl".equals(nameTwo) && "Dave".equals(nameOne))) {
             socialWeight = 0.3;
+            connectionList.add("CarlToDave");
         } else if (("Bill".equals(nameOne) && "Dave".equals(nameTwo)) || ("Bill".equals(nameTwo) && "Dave".equals(nameOne))) {
             socialWeight = 0.4;
+            connectionList.add("BillToDave");
         } else if (("Emma".equals(nameOne) && "Dave".equals(nameTwo)) || ("Emma".equals(nameTwo) && "Dave".equals(nameOne))) {
             socialWeight = 0.8;
+            connectionList.add("EmmaToDave");
         } else if (("Emma".equals(nameOne) && "Fred".equals(nameTwo)) || ("Emma".equals(nameTwo) && "Fred".equals(nameOne))) {
             socialWeight = 0.7;
+            connectionList.add("EmmaToFred");
         } else {
-            System.out.println("There is no direct relationship between " + nameOne + " and " + nameTwo);
+
+            if (socialWeight == 0) {
+                System.out.println("There is no direct relationship between " + nameOne + " and " + nameTwo);
+
+//                if (nameOne == arrayList.toString() ){
+//
+//                }
+            }
         }
 
         System.out.println(
