@@ -11,6 +11,4 @@ package ada4;
  */
 public class BestAssociationFinder {
 
-    Array
-
 }
